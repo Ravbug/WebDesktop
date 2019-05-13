@@ -23,7 +23,7 @@
     // Insert code here to initialize your application
     NSDictionary *dict = [[NSDictionary alloc]
                           initWithObjectsAndKeys:
-                          @"https://google.com/",@"url",
+                          @"https://discordapp.com/channels/@me",@"url",
                           [NSNumber numberWithDouble:640],@"width",[NSNumber numberWithDouble:480],@"height",nil];
     
     _fileManager = [NSFileManager new];

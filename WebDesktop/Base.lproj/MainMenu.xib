@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
-        <plugIn identifier="com.apple.WebKit2IBPlugin" version="14460.31"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
+        <plugIn identifier="com.apple.WebKit2IBPlugin" version="14490.70"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -630,7 +630,7 @@
                             <menuItem title="Show Sidebar" keyEquivalent="s" id="kIP-vf-haE">
                                 <modifierMask key="keyEquivalentModifierMask" control="YES" command="YES"/>
                                 <connections>
-                                    <action selector="toggleSourceList:" target="-1" id="iwa-gc-5KM"/>
+                                    <action selector="toggleSidebar:" target="-1" id="iwa-gc-5KM"/>
                                 </connections>
                             </menuItem>
                             <menuItem title="Enter Full Screen" keyEquivalent="f" id="4J7-dP-txa">
@@ -694,14 +694,14 @@
             </items>
             <point key="canvasLocation" x="120" y="-65"/>
         </menu>
-        <window title="WebDesktop" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
+        <window title="WebDesktop" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" titleVisibility="hidden" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="335" y="390" width="640" height="480"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
             <view key="contentView" wantsLayer="YES" id="EiT-Mj-1SZ">
                 <rect key="frame" x="0.0" y="0.0" width="640" height="480"/>
-                <autoresizingMask key="autoresizingMask"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
                     <wkWebView wantsLayer="YES" allowsBackForwardNavigationGestures="YES" allowsMagnification="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oKT-VV-wqE">
                         <rect key="frame" x="0.0" y="0.0" width="640" height="480"/>
@@ -718,6 +718,59 @@
                     <constraint firstItem="oKT-VV-wqE" firstAttribute="width" secondItem="EiT-Mj-1SZ" secondAttribute="width" id="w5o-IB-CDF"/>
                 </constraints>
             </view>
+            <toolbar key="toolbar" implicitIdentifier="C6E3A066-9648-4084-ACD2-7EDBBEDB7EAA" autosavesConfiguration="NO" displayMode="iconOnly" sizeMode="regular" id="Upr-cW-Jeu">
+                <allowedToolbarItems>
+                    <toolbarItem implicitItemIdentifier="9C454D2A-3F2A-4F7E-AED6-6AF9A78DA92E" label="Webpage Name" paletteLabel="Webpage Name" sizingBehavior="auto" id="OnL-ar-WBv">
+                        <nil key="toolTip"/>
+                        <textField key="view" horizontalHuggingPriority="251" verticalHuggingPriority="750" id="MdQ-WN-1fM">
+                            <rect key="frame" x="6" y="14" width="78" height="17"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <textFieldCell key="cell" lineBreakMode="clipping" title="Page Name" id="QEj-9N-o3F">
+                                <font key="font" usesAppearanceFont="YES"/>
+                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="6CC49EF3-DB2D-4A17-BC40-33AEFC595901" label="Go Forward" paletteLabel="Go Forward" sizingBehavior="auto" id="HUq-Vh-jHV">
+                        <nil key="toolTip"/>
+                        <button key="view" verticalHuggingPriority="750" id="SjC-So-N55">
+                            <rect key="frame" x="14" y="14" width="41" height="43"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <buttonCell key="cell" type="push" title="▶" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="uHk-Yr-Gr8">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="ForwardHit:" target="Voe-Tx-rLC" id="UdA-Jk-gAO"/>
+                            </connections>
+                        </button>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="BACF1E42-14CE-451B-BF10-DEE385A70DEF" label="Go Back" paletteLabel="Go Back" sizingBehavior="auto" id="Srt-3c-LN0">
+                        <nil key="toolTip"/>
+                        <button key="view" verticalHuggingPriority="750" id="LsE-dt-dl6">
+                            <rect key="frame" x="5" y="14" width="41" height="43"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <buttonCell key="cell" type="push" title="◀" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="L8b-sa-5QW">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="BackHit:" target="Voe-Tx-rLC" id="oec-c5-IVI"/>
+                            </connections>
+                        </button>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="oTR-fo-Upf"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="hNb-ld-mdj"/>
+                </allowedToolbarItems>
+                <defaultToolbarItems>
+                    <toolbarItem reference="Srt-3c-LN0"/>
+                    <toolbarItem reference="HUq-Vh-jHV"/>
+                    <toolbarItem reference="hNb-ld-mdj"/>
+                    <toolbarItem reference="OnL-ar-WBv"/>
+                    <toolbarItem reference="hNb-ld-mdj"/>
+                </defaultToolbarItems>
+            </toolbar>
         </window>
     </objects>
 </document>
