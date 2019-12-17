@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import <WebKit/WebKit.h>
 #import "constants.h"
 
 @interface AppDelegate ()
@@ -52,8 +51,10 @@
     if (url == nil){
         url = @"file:///errorpage.html";
     }
+	
 	_webkitview.navigationDelegate = self;
-    _webkitview.customUserAgent = @"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_2) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/12.0.2 Safari/605.1.15";
+	_webkitview.UIDelegate = self;
+    //_webkitview.customUserAgent = @"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_2) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/12.0.2 Safari/605.1.15";
     [_webkitview loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:url]]];
     
     //set the window size
@@ -73,13 +74,15 @@
  Sets the title bar of the window
  */
 -(void)setTitle:(NSString*)newTitle{
-	if (kshow_nav){
-		[_toolbarTitle setStringValue:newTitle];
-	}
-	else{
-		_window.title = newTitle;
-	}
+	[_toolbarTitle setStringValue:newTitle];
+	_window.title = newTitle;
 }
+
+- (IBAction)toggleToolbar:(id)sender {
+	_window.titleVisibility = !_window.titleVisibility;
+	_toolbar.visible = !_toolbar.visible;
+}
+
 
 //navigation menus hit -- move the navigation backward and forward
 - (IBAction)BackHit:(id)sender{
@@ -134,4 +137,22 @@ Zoom out the web view
 		[self setTitle:[[_webkitview URL] absoluteString]];
 	}
 }
+// popup handling: creating a subview
+// Handles closing webview
+-(void)webViewDidClose:(WKWebView *)webView{
+	[webView removeFromSuperview];
+}
+//creates a popup view displayed on top when the base tries to create a popup window
+-(WKWebView *)webView:(WKWebView *)webView createWebViewWithConfiguration:(WKWebViewConfiguration *)configuration forNavigationAction:(WKNavigationAction *)navigationAction windowFeatures:(WKWindowFeatures *)windowFeatures{
+	
+	WKWebView* wview = [[WKWebView alloc] initWithFrame:_webkitview.bounds configuration:configuration];
+	wview.bounds = _webkitview.bounds;
+	wview.autoresizingMask = (NSViewWidthSizable | NSViewHeightSizable );
+	wview.navigationDelegate = self;
+	wview.UIDelegate = self;
+	[_webkitview addSubview:wview];
+	
+	return wview;
+}
+
 @end

@@ -359,7 +359,7 @@
                             <menuItem title="Show Toolbar" keyEquivalent="t" id="snW-S8-Cw5">
                                 <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
                                 <connections>
-                                    <action selector="toggleToolbarShown:" target="-1" id="BXY-wc-z0C"/>
+                                    <action selector="toggleToolbar:" target="Voe-Tx-rLC" id="5f3-F3-spy"/>
                                 </connections>
                             </menuItem>
                             <menuItem title="Customize Toolbar…" id="1UK-8n-QPP">
@@ -382,7 +382,7 @@
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="1sa-m4-3Ku"/>
-                            <menuItem title="Zoom In" alternate="YES" keyEquivalent="=" allowsKeyEquivalentWhenHidden="YES" id="fjm-9W-ZNR">
+                            <menuItem title="Zoom In" keyEquivalent="=" allowsKeyEquivalentWhenHidden="YES" id="fjm-9W-ZNR">
                                 <connections>
                                     <action selector="zoomIn:" target="Voe-Tx-rLC" id="pDN-tq-oWG"/>
                                 </connections>
@@ -422,14 +422,12 @@
                                     <action selector="arrangeInFront:" target="-1" id="DRN-fu-gQh"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Go Back" id="ekR-dv-RAg">
-                                <modifierMask key="keyEquivalentModifierMask"/>
+                            <menuItem title="Go Back" keyEquivalent="[" id="ekR-dv-RAg">
                                 <connections>
                                     <action selector="BackHit:" target="Voe-Tx-rLC" id="NBb-iR-ogv"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Go Forward" id="2Eb-y9-7TD">
-                                <modifierMask key="keyEquivalentModifierMask"/>
+                            <menuItem title="Go Forward" keyEquivalent="]" id="2Eb-y9-7TD">
                                 <connections>
                                     <action selector="ForwardHit:" target="Voe-Tx-rLC" id="8Td-Ft-WRt"/>
                                 </connections>
@@ -527,6 +525,7 @@
                     <toolbarItem reference="hNb-ld-mdj"/>
                     <toolbarItem reference="OnL-ar-WBv"/>
                     <toolbarItem reference="hNb-ld-mdj"/>
+                    <toolbarItem reference="oTR-fo-Upf"/>
                 </defaultToolbarItems>
             </toolbar>
             <point key="canvasLocation" x="139" y="380"/>
