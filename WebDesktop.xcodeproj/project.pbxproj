@@ -37,6 +37,7 @@
 		AA5D927121F92B95002A9476 /* WebDesktopTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WebDesktopTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA5D927521F92B95002A9476 /* WebDesktopTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebDesktopTests.m; sourceTree = "<group>"; };
 		AA5D927721F92B95002A9476 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AAAA855D23A83F9D0098664E /* constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = constants.h; sourceTree = "<group>"; };
 		AAEF81E821FA57F70055E6B5 /* errorpage.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = errorpage.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,8 +81,9 @@
 			isa = PBXGroup;
 			children = (
 				AAEF81E821FA57F70055E6B5 /* errorpage.html */,
-				AA5D926121F92B93002A9476 /* AppDelegate.h */,
+				AAAA855D23A83F9D0098664E /* constants.h */,
 				AA5D926221F92B93002A9476 /* AppDelegate.m */,
+				AA5D926121F92B93002A9476 /* AppDelegate.h */,
 				AA5D926421F92B95002A9476 /* Assets.xcassets */,
 				AA5D926621F92B95002A9476 /* MainMenu.xib */,
 				AA5D926921F92B95002A9476 /* Info.plist */,
@@ -357,6 +359,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Ravbug.WebDesktop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -373,6 +376,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Ravbug.WebDesktop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
