@@ -143,7 +143,7 @@
 		AA5D925621F92B93002A9476 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1010;
+				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = Ravbug;
 				TargetAttributes = {
 					AA5D925D21F92B93002A9476 = {
@@ -348,6 +348,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = WebDesktop/Info.plist;
@@ -365,6 +366,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = WebDesktop/Info.plist;
