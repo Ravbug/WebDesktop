@@ -25,49 +25,32 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Insert code here to initialize your application
-    NSDictionary *dict = [[NSDictionary alloc]
-                          initWithObjectsAndKeys:
-                          kstart_url,@"url",
-                          [NSNumber numberWithDouble:1280],@"width",[NSNumber numberWithDouble:720],@"height",nil];
-    
-    _fileManager = [NSFileManager new];
-	
-	_currentZoom = kstartmag;
-    
-    [self spawnAppWithData:dict];
-    
-    NSLog(@"%@", [_fileManager currentDirectoryPath]);
-}
-
-/**
- Spawns the app with settings
- @paran data Dictionary with the settings for the instance
- */
-- (void)spawnAppWithData:(NSDictionary *)data {
     //get the URL and load it
-    NSString* url = [data objectForKey:@"url"];
+    NSString* url = kstart_url;
+    
+    _currentZoom = kstartmag;
     
     //laod the error page if the url is not present
     if (url == nil){
         url = @"file:///errorpage.html";
     }
-	
-	_webkitview.navigationDelegate = self;
-	_webkitview.UIDelegate = self;
+    
+    _webkitview.navigationDelegate = self;
+    _webkitview.UIDelegate = self;
     //_webkitview.customUserAgent = @"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_2) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/12.0.2 Safari/605.1.15";
     [_webkitview loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:url]]];
     
     //set the window size
-    [_window setContentSize:NSMakeSize([[data objectForKey:@"width"] doubleValue], [[data objectForKey:@"height"] doubleValue])];
+    [_window setContentSize:NSMakeSize(kstartwidth, kstartheight)];
     
     //set the window title
-	_window.titleVisibility = kshow_nav;
-	_toolbar.visible = kshow_nav;
-	
-	[self setTitle:kstart_name];
-	
-	//set scale factor
-	[self setZoomLevel:_currentZoom];
+    _window.titleVisibility = kshow_nav;
+    _toolbar.visible = kshow_nav;
+    
+    [self setTitle:kstart_name];
+    
+    //set scale factor
+    [self setZoomLevel:_currentZoom];
 }
 
 /**

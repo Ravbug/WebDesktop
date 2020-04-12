@@ -5,3 +5,5 @@
 #define kstart_name @"Discord"
 #define kactivetitle YES
 #define kstartmag 0.8
+#define kstartwidth 960
+#define kstartheight 540

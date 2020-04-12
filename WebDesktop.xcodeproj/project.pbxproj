@@ -12,7 +12,6 @@
 		AA5D926821F92B95002A9476 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA5D926621F92B95002A9476 /* MainMenu.xib */; };
 		AA5D926B21F92B95002A9476 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5D926A21F92B95002A9476 /* main.m */; };
 		AA5D927621F92B95002A9476 /* WebDesktopTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5D927521F92B95002A9476 /* WebDesktopTests.m */; };
-		AAEF81E921FA57F80055E6B5 /* errorpage.html in Resources */ = {isa = PBXBuildFile; fileRef = AAEF81E821FA57F70055E6B5 /* errorpage.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +37,6 @@
 		AA5D927521F92B95002A9476 /* WebDesktopTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebDesktopTests.m; sourceTree = "<group>"; };
 		AA5D927721F92B95002A9476 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AAAA855D23A83F9D0098664E /* constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = constants.h; sourceTree = "<group>"; };
-		AAEF81E821FA57F70055E6B5 /* errorpage.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = errorpage.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +78,6 @@
 		AA5D926021F92B93002A9476 /* WebDesktop */ = {
 			isa = PBXGroup;
 			children = (
-				AAEF81E821FA57F70055E6B5 /* errorpage.html */,
 				AAAA855D23A83F9D0098664E /* constants.h */,
 				AA5D926221F92B93002A9476 /* AppDelegate.m */,
 				AA5D926121F92B93002A9476 /* AppDelegate.h */,
@@ -182,7 +179,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AAEF81E921FA57F80055E6B5 /* errorpage.html in Resources */,
 				AA5D926521F92B95002A9476 /* Assets.xcassets in Resources */,
 				AA5D926821F92B95002A9476 /* MainMenu.xib in Resources */,
 			);
